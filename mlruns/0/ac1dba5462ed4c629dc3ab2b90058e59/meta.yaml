@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ac1dba5462ed4c629dc3ab2b90058e59/artifacts
+end_time: 1736569790690
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ac1dba5462ed4c629dc3ab2b90058e59
+run_name: salty-hawk-85
+run_uuid: ac1dba5462ed4c629dc3ab2b90058e59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736569786785
+status: 3
+tags: []
+user_id: kushp

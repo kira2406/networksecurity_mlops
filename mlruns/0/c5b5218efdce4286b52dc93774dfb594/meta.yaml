@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/c5b5218efdce4286b52dc93774dfb594/artifacts
+end_time: 1736569393816
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c5b5218efdce4286b52dc93774dfb594
+run_name: bald-koi-512
+run_uuid: c5b5218efdce4286b52dc93774dfb594
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736569387031
+status: 4
+tags: []
+user_id: kushp
