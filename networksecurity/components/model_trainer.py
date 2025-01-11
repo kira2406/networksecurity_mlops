@@ -22,6 +22,12 @@ import os, sys
 import pandas as pd
 import numpy as np
 import mlflow
+import dagshub
+from dotenv import load_dotenv
+
+load_dotenv()
+
+dagshub.init(repo_owner=os.getenv("REPO_OWNER"), repo_name=os.getenv("REPO_NAME"), mlflow=True)
 
 
 class ModelTrainer:
@@ -33,7 +39,6 @@ class ModelTrainer:
             raise NetworkSecurityException(e, sys)
         
     def track_mlflow(self, best_model, classification_metric: ClassificationMetricArtifact):
-        mlflow.set_tracking_uri("http://localhost:5000")
         with mlflow.start_run():
             f1_score = classification_metric.f1_score
             precision_score = classification_metric.precision_score
@@ -103,6 +108,9 @@ class ModelTrainer:
 
         network_model = NetworkModel(preprocessor=preprocessor, model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path, obj=network_model)
+
+
+        save_object("final_model/model.pkl", best_model)
 
         ## model trainer artifact
         model_trainer_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,
